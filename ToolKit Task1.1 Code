@@ -1,0 +1,122 @@
+namespace Task1._1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int apples = 0;
+            string choice;
+            bool tentChecked = false, hammockChecked = false, treeChecked = false, fireplaceChecked = false;
+
+            Console.WriteLine("You're at a campsite. You should probably talk to the camp guy. Would you like to talk to the camp guy? Type 'Y' or 'N'.");
+            choice = Console.ReadLine();
+            choice = choice.ToUpper();
+            if (choice != "Y")
+            {
+                Console.WriteLine("You decide to wander around aimlessly and get lost in the woods.\n\nGAMEOVER");
+                Console.ReadLine();
+            }
+            else
+            {
+                Console.WriteLine("You decide to talk to the camp guy.\nCAMP GUY: Can you find me 3 apples? They are scattered around the camp.");
+                Console.WriteLine("NEW QUEST ACQUIRED: FIND 3 APPLES");
+                while (choice != "TENT" && choice != "HAMMOCK" && choice != "TREE" && choice != "FIREPLACE" && apples < 3 || apples < 3)
+                {
+                    Console.WriteLine("Around the camp are a tent, a tree, a hammock and a fireplace. Which one are you checking?");
+                    choice = Console.ReadLine();
+                    choice = choice.ToUpper();
+                    
+                    if (choice == "TENT")
+                    {
+                        if (!tentChecked)
+                        {
+                            Console.WriteLine("You found an apple at the tent!");
+                            apples += 1;
+                            Console.WriteLine($"You now have {apples} apples!");
+                            tentChecked = true;
+
+                        }
+                        if (tentChecked)
+                        {
+                            Console.WriteLine("Nothing to find here...");
+
+                        }
+                        if (apples == 3)
+                        {
+                            Console.WriteLine("You have found all the apples, you should talk to the camp guy again. Talk to camp guy? 'Y' or 'N'?");
+                            choice = Console.ReadLine();
+                            choice = choice.ToUpper();
+                        }
+                    }
+                    if (choice == "TREE")
+                    {
+                        if (!treeChecked)
+                        {
+                            Console.WriteLine("You found an apple at the tree!");
+                            apples += 1;
+                            Console.WriteLine($"You now have {apples} apples!");
+                            treeChecked = true;
+
+                        }
+                        if (treeChecked)
+                        {
+                            Console.WriteLine("Nothing to find here...");
+
+                        }
+                        if (apples == 3)
+                        {
+                            Console.WriteLine("You have found all the apples, you should talk to the camp guy again. Talk to camp guy? 'Y' or 'N'?");
+                            choice = Console.ReadLine();
+                            choice = choice.ToUpper();
+                        }
+                    }
+                    if (choice == "HAMMOCK")
+                    {
+                        if (!hammockChecked)
+                        {
+                            Console.WriteLine("You found an apple at the hammock!");
+                            apples += 1;
+                            Console.WriteLine($"You now have {apples} apples!");
+                            hammockChecked = true;
+
+                        }
+                        if (hammockChecked)
+                        {
+                            Console.WriteLine("Nothing to find here...");
+
+                        }
+                        if (apples == 3)
+                        {
+                            Console.WriteLine("You have found all the apples, you should talk to the camp guy again. Talk to camp guy? 'Y' or 'N'?");
+                            choice = Console.ReadLine();
+                            choice = choice.ToUpper();
+                        }
+                    }
+                    if (choice == "FIREPLACE")
+                    {
+                        Console.WriteLine("Nothing to find here...");
+                        
+                    }
+
+                }
+                if (apples == 3)
+                {
+                    Console.WriteLine("You have found all the apples, you should talk to the camp guy again. Talk to camp guy? 'Y' or 'N'?");
+                    choice = Console.ReadLine();
+                    choice = choice.ToUpper();
+                    while (choice != "Y")
+                    {
+                        Console.WriteLine("You should REALLY talk to the camp guy.");
+                        Console.WriteLine("Talk to camp guy? 'Y' or 'N'?");
+                        choice = Console.ReadLine();
+                        choice = choice.ToUpper();
+                    }
+                    Console.WriteLine("CAMP GUY: You found all the apples! Thank you so much!\n\n GAME COMPLETE, CONGRATULATIONS!");
+                    Console.ReadLine();
+                }
+
+
+            }
+        }
+    }
+}
